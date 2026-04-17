@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Best Underwear for Running (What Actually Works) | VANTA</title>
+    <meta name="description" content="Dealing with chafing, sweat build-up, or ride-up mid-run? Discover what actually works in running underwear and why most pairs fail once you start moving.">
+    <link rel="icon" href="https://vanta.store/cdn/shop/files/VANTA_New_Logo.png?v=1707718116">
+
+    <!-- Barlow Font (matches VANTA store) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== VANTA DESIGN SYSTEM ===== */
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --off-black: #121212;
+            --light-gray: #F4F4F4;
+            --mid-gray: #6b6b6b;
+            --border-gray: #e8e8e8;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            color: var(--off-black);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            height: 64px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .site-header img {
+            height: 28px;
+            object-fit: contain;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            height: 580px;
+            background: var(--light-gray);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero img.hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+            max-width: 760px;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--white);
+            line-height: 1.05;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        .btn-pill {
+            display: inline-block;
+            background: var(--white);
+            color: var(--black);
+            font-family: 'Barlow', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 14px 36px;
+            border-radius: 36px;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn-pill:hover {
+            background: var(--off-black);
+            color: var(--white);
+        }
+        .btn-pill-dark {
+            background: var(--black);
+            color: var(--white);
+        }
+        .btn-pill-dark:hover {
+            background: var(--off-black);
+        }
+
+        /* ===== SECTION LAYOUTS ===== */
+        .section { padding: 80px 24px; }
+        .section-sm { padding: 56px 24px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            margin-bottom: 12px;
+        }
+        h2 {
+            font-size: clamp(26px, 3.5vw, 40px);
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        p { font-size: 16px; line-height: 1.7; color: var(--mid-gray); }
+        p strong { color: var(--off-black); }
+
+        /* ===== INTRO STRIP ===== */
+        .pain-strip {
+            background: var(--black);
+            padding: 0;
+            display: flex;
+            overflow: hidden;
+        }
+        .pain-strip-item {
+            flex: 1;
+            text-align: center;
+            padding: 28px 16px;
+            border-right: 1px solid rgba(255,255,255,0.12);
+            color: var(--white);
+        }
+        .pain-strip-item:last-child { border-right: none; }
+        .pain-strip-item .icon { font-size: 22px; margin-bottom: 6px; display: block; }
+        .pain-strip-item span {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ===== 2-COL SPLIT ===== */
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .split.reverse .split-img { order: 2; }
+        .split.reverse .split-text { order: 1; }
+        .split-img {
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            background: var(--light-gray);
+        }
+        .split-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ===== PILLARS GRID ===== */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border-gray);
+            border: 1px solid var(--border-gray);
+        }
+        .pillar-card {
+            background: var(--white);
+            padding: 40px 32px;
+        }
+        .pillar-number {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--mid-gray);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* ===== COMPARISON TABLE ===== */
+        .compare-box {
+            background: var(--light-gray);
+            padding: 56px;
+        }
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .compare-col h3 { font-size: 18px; margin-bottom: 20px; }
+        .check-list { list-style: none; }
+        .check-list li {
+            font-size: 15px;
+            color: var(--mid-gray);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .check-list li::before {
+            content: '→';
+            color: var(--black);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner {
+            background: var(--black);
+            color: var(--white);
+            padding: 80px 24px;
+            text-align: center;
+        }
+        .cta-banner h2 { color: var(--white); margin-bottom: 12px; }
+        .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 32px; font-size: 17px; }
+
+        /* ===== FAQ ===== */
+        .faq-item {
+            border-top: 1px solid var(--border-gray);
+            padding: 28px 0;
+        }
+        .faq-item:last-child { border-bottom: 1px solid var(--border-gray); }
+        .faq-q {
+            font-size: 17px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+        .faq-a { font-size: 15px; color: var(--mid-gray); line-height: 1.7; }
+
+        /* ===== RELATED LINKS ===== */
+        .related-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+        }
+        .related-card {
+            background: var(--light-gray);
+            padding: 40px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.2s;
+        }
+        .related-card:hover { background: #eaeaea; }
+        .related-card .label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            margin-bottom: 8px;
+        }
+        .related-card h3 {
+            font-size: 18px;
+            color: var(--black);
+            margin-bottom: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 60px 24px 40px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-brand img { height: 24px; margin-bottom: 16px; filter: invert(1); }
+        .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+        .footer-col h4 {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            color: rgba(255,255,255,0.7);
+        }
+        .footer-col a {
+            display: block;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 24px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .pillars-grid { grid-template-columns: 1fr 1fr; }
+            .split { grid-template-columns: 1fr; gap: 32px; }
+            .split.reverse .split-img { order: 1; }
+            .split.reverse .split-text { order: 2; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .pillars-grid { grid-template-columns: 1fr; }
+            .pain-strip { flex-direction: column; }
+            .pain-strip-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+            .compare-row { grid-template-columns: 1fr; }
+            .related-links { grid-template-columns: 1fr; }
+            .compare-box { padding: 32px 24px; }
+            .footer-inner { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+        }
+    </style>
+
+    <!-- Product Schema -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Product","name":"VANTA Sweat Series Underwear","image":"https://vanta.store/cdn/shop/files/vanta-running-underwear-smooth-seamless-design.webp","description":"Performance underwear designed for running, sweating, and high-output movement. Features quick-dry fabric and supportive pouch construction.","brand":{"@type":"Brand","name":"VANTA"},"category":"Men's Performance Underwear","url":"https://vanta.store/collections/men"}
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best underwear for running?","acceptedAnswer":{"@type":"Answer","text":"The best underwear for running uses moisture-wicking fabric, stays in place, and reduces friction during movement."}},{"@type":"Question","name":"Why does underwear ride up when running?","acceptedAnswer":{"@type":"Answer","text":"Underwear usually rides up when running because of poor fit, soft fabrics losing structure, or inseams that do not stay in place during movement."}},{"@type":"Question","name":"What fabric is best for running underwear?","acceptedAnswer":{"@type":"Answer","text":"Quick-dry, moisture-wicking fabrics are usually best for running because they stay lighter under sweat and dry faster than cotton or other absorbent fabrics."}},{"@type":"Question","name":"How do I stop chafing when running?","acceptedAnswer":{"@type":"Answer","text":"To help stop chafing when running, choose underwear with performance fabric, flat seams, proper support, and a fit that stays in place."}}]}
+    </script>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+    <a href="https://vanta.store">
+        <img src="https://vanta.store/cdn/shop/files/VANTA_New_Logo.png?v=1707718116&width=600" alt="VANTA">
+    </a>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <img class="hero-bg" src="https://vanta.store/cdn/shop/files/vanta-athletic-underwear-training-performance-fit.webp?v=1773889402&width=1200" alt="VANTA performance underwear for running">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <span class="hero-tag">Running Guide</span>
+        <h1>The Best Underwear<br>for Running</h1>
+        <p>Chafing. Sweat build-up. Underwear riding up mid-run.<br>Most underwear isn't built for this. Here's what actually works.</p>
+        <a href="https://vanta.store/collections/men" class="btn-pill">Shop Sweat Series</a>
+    </div>
+</section>
+
+<!-- ===== PAIN STRIP ===== -->
+<div class="pain-strip">
+    <div class="pain-strip-item"><span class="icon">🔥</span><span>Chafing</span></div>
+    <div class="pain-strip-item"><span class="icon">💧</span><span>Sweat Build-Up</span></div>
+    <div class="pain-strip-item"><span class="icon">⬆️</span><span>Riding Up</span></div>
+    <div class="pain-strip-item"><span class="icon">⚡</span><span>Performance Fabric</span></div>
+</div>
+
+<!-- ===== WHY MOST FAIL ===== -->
+<section class="section">
+    <div class="container">
+        <div class="split">
+            <div class="split-img">
+                <img src="https://vanta.store/cdn/shop/files/vanta-running-underwear-high-intensity-training.webp?v=1773885753&width=533" alt="VANTA emerald running underwear">
+            </div>
+            <div class="split-text">
+                <p class="section-label">The Problem</p>
+                <h2>Why Most Underwear Fails When You Run</h2>
+                <p>Most underwear is built for <strong>softness, everyday comfort, and lounging</strong>. But running introduces constant movement, sweat, and friction — and that's when problems show up.</p>
+                <br>
+                <ul class="check-list">
+                    <li>Fabric becomes damp and heavy</li>
+                    <li>Legs start riding up mid-run</li>
+                    <li>Seams begin to irritate skin</li>
+                </ul>
+                <br>
+                <p>It's not uncommon — the underwear just isn't designed for this kind of movement.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== 4 PILLARS ===== -->
+<section class="section-sm" style="background: var(--light-gray); padding: 56px 24px;">
+    <div class="container">
+        <p class="section-label" style="text-align:center;">The Foundation</p>
+        <h2 style="text-align:center; margin-bottom: 48px;">What Actually Matters<br>for Running Underwear</h2>
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <span class="pillar-number">01 — Fabric</span>
+                <h3>Moisture-Wicking</h3>
+                <p>Cotton absorbs sweat, causing friction and that heavy, damp feeling. Quick-dry fabrics stay light and dry faster — the single biggest difference on longer runs.</p>
+            </div>
+            <div class="pillar-card">
+                <span class="pillar-number">02 — Fit</span>
+                <h3>Stays in Place</h3>
+                <p>If your underwear shifts, you'll feel it immediately. A structured fit with consistent shape during movement means fewer mid-run adjustments.</p>
+            </div>
+            <div class="pillar-card">
+                <span class="pillar-number">03 — Support</span>
+                <h3>Pouch Design</h3>
+                <p>Lack of support equals more movement, which equals more friction. A well-designed pouch keeps everything in place and reduces skin-on-skin contact over distance.</p>
+            </div>
+            <div class="pillar-card">
+                <span class="pillar-number">04 — Seams</span>
+                <h3>Flat Construction</h3>
+                <p>Chafing often comes from seams, not just the fabric. Flat seams and minimal stitching make a big difference over time — small detail, huge impact.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BRIEF VS BOXER BRIEF ===== -->
+<section class="section">
+    <div class="container">
+        <div class="split reverse">
+            <div class="split-text">
+                <p class="section-label">The Choice</p>
+                <h2>Brief vs Boxer Brief<br>for Running</h2>
+                <div class="compare-row" style="margin-top:32px; gap:32px;">
+                    <div>
+                        <h3 style="font-size:16px; margin-bottom:14px;">Boxer Briefs</h3>
+                        <ul class="check-list">
+                            <li>More thigh coverage</li>
+                            <li>Help reduce chafing</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="font-size:16px; margin-bottom:14px;">Briefs</h3>
+                        <ul class="check-list">
+                            <li>No leg ride-up</li>
+                            <li>Lighter, minimal feel</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top:24px;">A lot of runners switch once they figure out what works best for their body. Both work — it comes down to preference and run type.</p>
+            </div>
+            <div class="split-img">
+                <img src="https://vanta.store/cdn/shop/files/vanta-running-underwear-smooth-seamless-design.webp?v=1773885881&width=533" alt="VANTA smooth seamless running underwear">
+        </div>
+    </div>
+</section>
+
+<!-- ===== COMMON MISTAKES ===== -->
+<section class="section">
+    <div class="container">
+        <div class="split">
+            <div class="split-text">
+                <p class="section-label">Avoid These</p>
+                <h2>Common Mistakes</h2>
+                <ul class="check-list">
+                    <li style="color:var(--black); font-weight:500;">Choosing based on softness alone</li>
+                    <li style="color:var(--black); font-weight:500;">Wearing cotton underwear</li>
+                    <li style="color:var(--black); font-weight:500;">Ignoring fit and structure</li>
+                    <li style="color:var(--black); font-weight:500;">Assuming all "active" underwear performs the same</li>
+                </ul>
+            </div>
+            <div class="split-img">
+                <img src="https://vanta.store/cdn/shop/files/vanta-athletic-underwear-training-performance-fit.webp?v=1773889402&width=533" alt="VANTA running underwear details">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHAT WORKS SECTION ===== -->
+<section class="section-sm" style="padding: 56px 24px;">
+    <div class="container">
+        <p class="section-label" style="text-align:center;">Real-World Feedback</p>
+        <h2 style="text-align:center; margin-bottom:8px;">What Actually Works in Practice</h2>
+        <p style="text-align:center; max-width:620px; margin: 0 auto 48px;">The same complaints come up again and again from runners: <em>"They ride up," "They get soaked," "They start chafing halfway through."</em> Most of this comes down to fabric and fit under sweat.</p>
+        <div class="compare-box">
+            <h3 style="margin-bottom:24px;">What to Look For in a Performance Pair</h3>
+            <div class="compare-row">
+                <ul class="check-list">
+                    <li>Quick-dry fabric that doesn't get heavy mid-run</li>
+                    <li>Structured support to reduce movement</li>
+                </ul>
+                <ul class="check-list">
+                    <li>A fit that stays in place throughout</li>
+                    <li>Lightweight, breathable construction</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-banner">
+    <h2>Final Thoughts</h2>
+    <p>If you run regularly, your underwear should stay dry, stay in place, and move with you. Most everyday pairs aren't built for that.<br><br>That's why performance-focused underwear exists — and why it tends to feel noticeably better once distance, sweat, and movement come into play.</p>
+    <a href="https://vanta.store/collections/men" class="btn-pill">Explore VANTA Sweat Series</a>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+    <div class="container" style="max-width: 860px;">
+        <p class="section-label">FAQ</p>
+        <h2 style="margin-bottom:40px;">Common Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the best underwear for running?</div>
+            <div class="faq-a">The best underwear for running uses moisture-wicking fabric, stays in place, and reduces friction during movement.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Why does underwear ride up when running?</div>
+            <div class="faq-a">Underwear usually rides up when running because of poor fit, soft fabrics losing structure, or inseams that do not stay in place during movement.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">What fabric is best for running underwear?</div>
+            <div class="faq-a">Quick-dry, moisture-wicking fabrics are usually best for running because they stay lighter under sweat and dry faster than cotton or other absorbent fabrics.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">How do I stop chafing when running?</div>
+            <div class="faq-a">To help stop chafing when running, choose underwear with performance fabric, flat seams, proper support, and a fit that stays in place.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== RELATED PAGES ===== -->
+<div class="related-links">
+    <a class="related-card" href="/best-underwear-for-running-australia">
+        <p class="label">Next Read</p>
+        <h3>Best Men's Running Underwear (Australia) →</h3>
+    </a>
+    <a class="related-card" href="/step-one-vs-vanta">
+        <p class="label">Comparison Guide</p>
+        <h3>Step One vs VANTA: Which Is Better for Running? →</h3>
+    </a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <img src="https://vanta.store/cdn/shop/files/VANTA_New_Logo.png?v=1707718116&width=600" alt="VANTA">
+            <p>Game-changing comfort for high-output movement. Built for men who sweat.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Shop</h4>
+            <a href="https://vanta.store/collections/men">Sweat Series</a>
+            <a href="https://vanta.store/collections/men">All Products</a>
+        </div>
+        <div class="footer-col">
+            <h4>Running &amp; Performance</h4>
+            <a href="/best-underwear-for-running">Best Underwear for Running</a>
+            <a href="/best-underwear-for-running-australia">Best Men's Running Underwear (AU)</a>
+            <a href="/step-one-vs-vanta">Step One vs VANTA</a>
+        </div>
+        <div class="footer-col">
+            <h4>Help</h4>
+            <a href="https://vanta.store/pages/faqs">FAQs</a>
+            <a href="https://vanta.store/pages/contact">Contact Us</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 VANTA. All rights reserved.</span>
+        <span>vanta.store</span>
+    </div>
+</footer>
+
+</body>
+</html>
