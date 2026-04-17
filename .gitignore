@@ -1,0 +1,20 @@
+# Large binary assets
+*.zip
+*.pdf
+*.mp4
+*.MOV
+*.DS_Store
+
+# Theme backups / Bulk content (causing push failures)
+All Content/
+AU Vanta/
+DE Vanta/
+EU Vanta/
+NZ Vanta/
+UK Vanta/
+USA Vanta/
+Pages for SEO/
+
+# Agent/AI metadata (optional, usually kept if shared)
+#.gemini/
+#.agent/
