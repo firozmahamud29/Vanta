@@ -62,185 +62,162 @@
 
     <style>
         :root {
-            --black: #000000;
-            --white: #ffffff;
-            --gray-50: #FAFAFA;
-            --gray-100: #f5f5f5;
-            --gray-200: #e5e5e5;
-            --gray-300: #d4d4d4;
-            --gray-500: #737373;
-            --gray-700: #404040;
-            --gray-800: #262626;
-            --gray-900: #171717;
+            --color-primary: #1C1917;
+            --color-secondary: #44403C;
+            --color-bg: #FAFAF9;
+            --color-white: #ffffff;
+            --color-gray-100: #F3F4F6;
+            --color-gray-200: #E5E7EB;
+            --color-gray-400: #9CA3AF;
+            --color-gray-600: #4B5563;
             --font-body: 'Barlow', sans-serif;
             --font-heading: 'Barlow Condensed', sans-serif;
-            --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --transition: 0.25s var(--ease);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: 300ms var(--ease);
+            --max-width: 1400px;
+            --container-padding: 40px;
         }
+
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { background: var(--white); color: var(--black); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-        img { display: block; max-width: 100%; height: auto; }
-        a { color: inherit; text-decoration: none; }
+        body { background: var(--color-white); color: var(--color-primary); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        
         .heading-font { font-family: var(--font-heading); text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em; }
+        .cursor-pointer { cursor: pointer; }
 
-        .announcement-bar { background: var(--black); color: var(--white); font-family: var(--font-heading); font-weight: 600; text-align: center; padding: 11px 16px; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; }
-        .site-header { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 20px 0; position: sticky; top: 0; z-index: 1000; }
-        .header-inner { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
-        .header-nav { display: flex; gap: 28px; }
-        .header-nav a { font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: 0.08em; transition: opacity var(--transition); }
-        .header-nav a:hover { opacity: 0.5; }
-        .header-logo img { height: 22px; }
-        .header-actions { display: flex; justify-content: flex-end; gap: 20px; }
-        .header-actions svg { width: 20px; height: 20px; stroke: var(--black); fill: none; stroke-width: 1.8; cursor: pointer; transition: opacity var(--transition); }
-        .header-actions svg:hover { opacity: 0.5; }
+        .announcement-bar { background: var(--color-primary); color: var(--color-white); font-family: var(--font-heading); font-weight: 600; text-align: center; padding: 10px 20px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; }
+        
+        .site-header { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-gray-200); padding: 18px 0; position: sticky; top: 0; z-index: 1000; }
+        .header-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--container-padding); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+        .header-nav { display: flex; gap: 32px; }
+        .header-nav a { font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; font-size: 13px; letter-spacing: 0.1em; transition: color var(--transition); }
+        .header-logo img { height: 20px; }
+        .header-actions { display: flex; justify-content: flex-end; gap: 24px; }
+        .header-actions svg { width: 20px; height: 20px; stroke: var(--color-primary); fill: none; stroke-width: 1.8; cursor: pointer; }
 
-        .hero { position: relative; min-height: 85vh; display: flex; align-items: center; overflow: hidden; background: var(--black); }
-        .hero-bg { position: absolute; inset: 0; z-index: 1; }
-        .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.45; }
-        .hero-content { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto; padding: 100px 40px; width: 100%; }
-        .hero-tag { font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3em; font-size: 13px; color: var(--gray-300); margin-bottom: 20px; display: block; }
-        .hero h1 { font-family: var(--font-heading); font-weight: 800; text-transform: uppercase; font-size: clamp(48px, 8vw, 96px); line-height: 0.92; color: var(--white); margin-bottom: 28px; max-width: 700px; }
-        .hero-desc { font-size: 18px; line-height: 1.7; color: var(--gray-300); max-width: 520px; margin-bottom: 40px; }
-        .btn-primary { display: inline-block; background: var(--white); color: var(--black); padding: 16px 44px; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; font-size: 14px; transition: all var(--transition); cursor: pointer; border: none; }
-        .btn-primary:hover { background: var(--gray-200); transform: translateY(-2px); }
+        .hero { position: relative; min-height: 85vh; display: flex; align-items: center; background: var(--color-primary); overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; opacity: 0.5; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-content { position: relative; z-index: 2; max-width: var(--max-width); margin: 0 auto; padding: 80px var(--container-padding); width: 100%; color: var(--color-white); }
+        .hero-tag { font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; letter-spacing: 0.4em; font-size: 11px; color: var(--color-gray-400); margin-bottom: 24px; display: block; }
+        .hero h1 { font-family: var(--font-heading); font-weight: 800; text-transform: uppercase; font-size: clamp(40px, 7vw, 90px); line-height: 0.9; margin-bottom: 32px; max-width: 800px; }
+        .hero-desc { font-size: 18px; line-height: 1.6; color: var(--color-gray-200); max-width: 500px; margin-bottom: 48px; }
+        .btn-cta { display: inline-block; background: var(--color-white); color: var(--color-primary); padding: 18px 48px; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: 14px; transition: all var(--transition); border: none; cursor: pointer; }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 
-        .marquee { background: var(--black); padding: 20px 0; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .marquee-track { display: flex; white-space: nowrap; animation: scroll 30s linear infinite; }
-        .marquee-track span { font-family: var(--font-heading); font-weight: 700; font-size: 14px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.25em; margin-right: 60px; flex-shrink: 0; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        .section { padding: 100px 40px; }
-        .section-inner { max-width: 1000px; margin: 0 auto; }
+        .section { padding: 120px var(--container-padding); }
+        .section-inner { max-width: 900px; margin: 0 auto; }
         .section-wide { max-width: 1200px; margin: 0 auto; }
-        .section-tag { font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3em; font-size: 12px; color: var(--gray-500); margin-bottom: 16px; display: block; }
-        .section-title { font-family: var(--font-heading); font-weight: 800; text-transform: uppercase; font-size: clamp(32px, 5vw, 56px); line-height: 0.95; margin-bottom: 40px; }
-        .section-body { font-size: 18px; line-height: 1.75; color: var(--gray-700); max-width: 720px; }
+        .section-tag { font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; letter-spacing: 0.4em; font-size: 11px; color: var(--color-gray-400); margin-bottom: 20px; display: block; }
+        .section-title { font-family: var(--font-heading); font-weight: 800; text-transform: uppercase; font-size: clamp(32px, 5vw, 60px); line-height: 0.92; margin-bottom: 32px; }
+        .section-body { font-size: 19px; line-height: 1.7; color: var(--color-gray-600); }
 
-        /* Brand Cards */
-        .brand-grid { display: grid; gap: 16px; margin-top: 48px; }
-        .brand-card { display: grid; grid-template-columns: auto 1fr; gap: 24px; padding: 36px 40px; border: 1px solid var(--gray-200); background: var(--white); transition: border-color var(--transition); }
-        .brand-card:hover { border-color: var(--gray-300); }
-        .brand-card.featured { border-color: var(--black); border-width: 2px; }
-        .brand-rank { font-family: var(--font-heading); font-size: 40px; font-weight: 800; color: var(--gray-200); line-height: 1; }
-        .brand-card.featured .brand-rank { color: var(--black); }
-        .brand-info h3 { font-family: var(--font-heading); font-size: 20px; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
-        .brand-meta { font-size: 14px; color: var(--gray-500); margin-bottom: 12px; font-weight: 500; }
-        .brand-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-        .brand-tags span { font-size: 12px; padding: 4px 10px; background: var(--gray-100); font-weight: 600; letter-spacing: 0.02em; }
-        .brand-tags span.pro { color: #166534; background: #f0fdf4; }
-        .brand-tags span.con { color: #991b1b; background: #fef2f2; }
+        .brand-grid { display: grid; gap: 20px; margin-top: 64px; }
+        .brand-card { display: grid; grid-template-columns: auto 1fr; gap: 32px; padding: 48px; border: 1px solid var(--color-gray-200); transition: all var(--transition); border-radius: 4px; }
+        .brand-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--color-primary); }
+        .brand-card.featured { border-left: 6px solid var(--color-primary); background: var(--color-bg); }
+        .brand-rank { font-family: var(--font-heading); font-size: 48px; font-weight: 800; color: var(--color-gray-200); line-height: 1; }
+        .featured .brand-rank { color: var(--color-primary); }
+        .brand-info h3 { font-family: var(--font-heading); font-size: 24px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+        .brand-meta { font-size: 14px; color: var(--color-gray-400); margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .brand-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+        .brand-tags span { font-size: 13px; padding: 6px 14px; background: var(--color-white); font-weight: 600; border: 1px solid var(--color-gray-200); border-radius: 2px; }
+        .brand-tags span.pro { color: #166534; background: #f0fdf4; border-color: #dcfce7; }
+        .brand-tags span.con { color: #991b1b; background: #fef2f2; border-color: #fee2e2; }
 
-        /* Quick Comparison Table */
-        .table-wrap { overflow-x: auto; margin-top: 60px; }
-        table { width: 100%; border-collapse: collapse; min-width: 600px; }
-        th { text-align: left; padding: 20px; border-bottom: 2px solid var(--black); font-family: var(--font-heading); text-transform: uppercase; font-size: 14px; letter-spacing: 0.05em; }
-        td { padding: 20px; border-bottom: 1px solid var(--gray-200); font-size: 15px; }
-        .star-rating { color: var(--black); letter-spacing: 2px; }
+        .table-wrap { overflow-x: auto; margin-top: 80px; }
+        table { width: 100%; border-collapse: collapse; min-width: 700px; }
+        th { text-align: left; padding: 24px; border-bottom: 2px solid var(--color-primary); font-family: var(--font-heading); text-transform: uppercase; font-size: 14px; letter-spacing: 0.1em; }
+        td { padding: 24px; border-bottom: 1px solid var(--color-gray-200); font-size: 16px; }
+        .star-rating { color: var(--color-primary); letter-spacing: 3px; font-weight: 800; }
 
-        .cta-banner { background: var(--gray-100); padding: 60px 40px; text-align: center; }
+        .cta-banner { background: var(--color-bg); padding: 100px var(--container-padding); text-align: center; border-top: 1px solid var(--color-gray-200); border-bottom: 1px solid var(--color-gray-200); }
         .cta-banner-inner { max-width: 600px; margin: 0 auto; }
-        .cta-banner h3 { font-family: var(--font-heading); font-size: 32px; font-weight: 800; text-transform: uppercase; margin-bottom: 16px; }
-        .cta-banner p { color: var(--gray-700); margin-bottom: 28px; font-size: 16px; }
-        .btn-dark { display: inline-block; background: var(--black); color: var(--white); padding: 14px 40px; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 13px; transition: all var(--transition); }
-        .btn-dark:hover { opacity: 0.85; transform: translateY(-1px); }
+        .cta-banner h3 { font-family: var(--font-heading); font-size: 40px; font-weight: 800; text-transform: uppercase; margin-bottom: 24px; }
+        .cta-banner p { color: var(--color-gray-600); margin-bottom: 40px; font-size: 18px; }
+        .btn-dark { display: inline-block; background: var(--color-primary); color: var(--color-white); padding: 18px 48px; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: 14px; transition: all var(--transition); border: none; cursor: pointer; }
+        .btn-dark:hover { opacity: 0.9; transform: translateY(-3px); }
 
-        /* FAQ */
         .faq-accordion { max-width: 800px; margin: 0 auto; }
-        .faq-item { border-bottom: 1px solid var(--gray-200); }
-        .faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 22px 0; background: none; border: none; cursor: pointer; text-align: left; font-family: var(--font-heading); font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--black); transition: opacity var(--transition); }
-        .faq-trigger:hover { opacity: 0.6; }
-        .faq-icon { position: relative; width: 14px; height: 14px; flex-shrink: 0; margin-left: 20px; }
-        .faq-icon::before, .faq-icon::after { content: ""; position: absolute; background: var(--black); transition: all 0.3s var(--ease); }
-        .faq-icon::before { top: 0; left: 6px; width: 2px; height: 14px; }
-        .faq-icon::after { top: 6px; left: 0; width: 14px; height: 2px; }
-        .faq-item.active .faq-icon::before { transform: rotate(90deg); opacity: 0; }
-        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.35s var(--ease); }
-        .faq-item.active .faq-content { max-height: 300px; }
-        .faq-answer { font-size: 15px; line-height: 1.7; color: var(--gray-700); padding-bottom: 22px; padding-right: 40px; }
+        .faq-item { border-bottom: 1px solid var(--color-gray-200); }
+        .faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 28px 0; background: none; border: none; cursor: pointer; text-align: left; font-family: var(--font-heading); font-size: 17px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+        .faq-plus { position: relative; width: 14px; height: 14px; }
+        .faq-plus::before, .faq-plus::after { content: ""; position: absolute; background: currentColor; transition: transform 0.4s var(--ease); }
+        .faq-plus::before { top: 0; left: 6px; width: 2px; height: 14px; }
+        .faq-plus::after { top: 6px; left: 0; width: 14px; height: 2px; }
+        .faq-item.active .faq-plus::before { transform: rotate(90deg); opacity: 0; }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); }
+        .faq-item.active .faq-content { max-height: 400px; }
+        .faq-answer { font-size: 16px; color: var(--color-gray-600); padding-bottom: 28px; line-height: 1.7; }
 
-        /* Footer */
-        .site-footer { background: var(--white); border-top: 1px solid var(--gray-200); padding: 80px 40px 40px; }
-        .footer-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; }
-        .footer-brand-logo img { height: 24px; margin-bottom: 24px; }
-        .footer-brand-text { font-size: 14px; color: var(--gray-500); max-width: 280px; line-height: 1.6; margin-bottom: 28px; }
-        .footer-social-row { display: flex; gap: 16px; }
-        .footer-social-row a { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--gray-200); transition: all var(--transition); }
-        .footer-social-row a:hover { border-color: var(--black); }
-        .footer-social-row svg { width: 16px; height: 16px; fill: var(--black); }
-        .footer-col h4 { font-family: var(--font-heading); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 24px; color: var(--black); }
-        .footer-col-links { display: grid; gap: 12px; }
-        .footer-col-links a { font-size: 14px; color: var(--gray-500); transition: color var(--transition); }
-        .footer-col-links a:hover { color: var(--black); }
-        .footer-bottom-bar { max-width: 1400px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid var(--gray-200); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--gray-500); letter-spacing: 0.05em; }
-        .footer-payments { display: flex; gap: 8px; align-items: center; }
-        .footer-payments span { display: inline-block; padding: 4px 8px; border: 1px solid var(--gray-200); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-500); }
+        .site-footer { background: var(--color-white); padding: 100px var(--container-padding) 40px; border-top: 1px solid var(--color-gray-200); }
+        .footer-grid { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 80px; }
+        .footer-logo img { height: 20px; margin-bottom: 32px; }
+        .footer-col h4 { font-family: var(--font-heading); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 32px; }
+        .footer-links { display: flex; flex-direction: column; gap: 16px; }
+        .footer-links a { font-size: 14px; color: var(--color-gray-600); transition: color var(--transition); }
+        .footer-bottom { max-width: var(--max-width); margin: 64px auto 0; padding-top: 32px; border-top: 1px solid var(--color-gray-200); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--color-gray-400); }
 
-        @media (max-width: 1024px) { .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; } }
-        @media (max-width: 768px) { .section { padding: 70px 24px; } .hero { min-height: 70vh; } .hero-content { padding: 60px 24px; } .footer-inner { grid-template-columns: 1fr; } }
-        @media (max-width: 640px) { .header-inner { grid-template-columns: auto 1fr; } .header-nav { display: none; } }
+        @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 60px; } .brand-card { padding: 32px; } }
+        @media (max-width: 768px) { .section { padding: 80px var(--container-padding); } .hero h1 { font-size: 44px; } .brand-card { grid-template-columns: 1fr; gap: 16px; } .header-nav { display: none; } .footer-grid { grid-template-columns: 1fr; gap: 48px; } }
     </style>
 </head>
 <body>
 
-<div class="announcement-bar">FREE SHIPPING OVER $100 &nbsp;&bull;&nbsp; 100% COMFORT GUARANTEE &nbsp;&bull;&nbsp; GAME CHANGING COMFORT</div>
+<div class="announcement-bar">FREE SHIPPING OVER $100 &nbsp;&bull;&nbsp; Comfort Guarantee &nbsp;&bull;&nbsp; Performance Engineered</div>
 
 <header class="site-header">
     <div class="header-inner">
         <nav class="header-nav">
-            <a href="https://vanta.store/collections/men">Men</a>
-            <a href="https://vanta.store/collections/swim-series">Collections</a>
-            <a href="https://vanta.store/collections/women-set">Women</a>
+            <a href="https://vanta.store/collections/men" class="cursor-pointer">Men</a>
+            <a href="https://vanta.store/collections/swim-series" class="cursor-pointer">Collections</a>
+            <a href="https://vanta.store/collections/women-set" class="cursor-pointer">Women</a>
         </nav>
-        <div class="header-logo"><a href="https://vanta.store"><img src="https://vanta.store/cdn/shop/files/VANTA_New_Logo.png?v=1707718116&width=600" alt="VANTA"></a></div>
+        <div class="header-logo"><a href="https://vanta.store" class="cursor-pointer"><img src="https://vanta.store/cdn/shop/files/VANTA_New_Logo.png?v=1707718116&width=600" alt="VANTA"></a></div>
         <div class="header-actions">
-            <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor"/><path d="m21 21-4.35-4.35" stroke="currentColor"/></svg>
-            <svg viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor"/><circle cx="12" cy="7" r="4" stroke="currentColor"/></svg>
-            <svg viewBox="0 0 24 24" fill="none"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4ZM3 6h18" stroke="currentColor"/><path d="M16 10a4 4 0 0 1-8 0" stroke="currentColor"/></svg>
+            <svg class="cursor-pointer" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor"/><path d="m21 21-4.35-4.35" stroke="currentColor"/></svg>
+            <svg class="cursor-pointer" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor"/><circle cx="12" cy="7" r="4" stroke="currentColor"/></svg>
+            <svg class="cursor-pointer" viewBox="0 0 24 24" fill="none"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4ZM3 6h18" stroke="currentColor"/><path d="M16 10a4 4 0 0 1-8 0" stroke="currentColor"/></svg>
         </div>
     </div>
 </header>
 
 <section class="hero">
-    <div class="hero-bg"><img src="https://vanta.store/cdn/shop/files/vanta-performance-underwear-motion-support.webp?v=1773886254&width=1800" alt="VANTA Australia Performance"></div>
+    <div class="hero-bg"><img src="https://vanta.store/cdn/shop/files/vanta-performance-underwear-motion-support.webp?v=1773886254&width=1800" alt="VANTA Australia" loading="eager"></div>
     <div class="hero-content">
-        <span class="hero-tag">Performance Engineered &bull; Australia</span>
-        <h1>BEST MEN’S RUNNING UNDERWEAR (AUSTRALIA 2026 GUIDE)</h1>
-        <p class="hero-desc">If you’ve ever gone for a run and dealt with chafing, sweat build-up, underwear riding up, or constant adjusting, you already know not all underwear is built for running.</p>
-        <a href="#guide" class="btn-primary">View the 2026 Rankings</a>
+        <span class="hero-tag">Market Ranking &bull; Australia 2026</span>
+        <h1>BEST MEN’S RUNNING UNDERWEAR IN AUSTRALIA.</h1>
+        <p class="hero-desc">The high-humidity, high-heat conditions of Australia demand more from your gear. We ranked the top-tier options based on real-world performance.</p>
+        <a href="#guide" class="btn-cta">View the rankings</a>
     </div>
 </section>
-
-<div class="marquee">
-    <div class="marquee-track">
-        <span>Vanta Sweat Series</span><span>Australia's Top Rated</span><span>Double Layer Support</span><span>Breathable For The Heat</span><span>Quick-Dry Fabric</span>
-        <span>Vanta Sweat Series</span><span>Australia's Top Rated</span><span>Double Layer Support</span><span>Breathable For The Heat</span><span>Quick-Dry Fabric</span>
-    </div>
-</div>
 
 <section class="section" id="guide">
     <div class="section-inner">
-        <p class="section-body">Some pairs feel fine for the first kilometre — then everything changes once heat, movement, and sweat kick in. This guide compares popular men’s underwear brands in Australia, what they’re actually best for, and which pairs perform when you’re moving.</p>
+        <span class="section-tag">Methodology</span>
+        <h2 class="section-title">Not All "Active" Gear<br>Is Equal.</h2>
+        <p class="section-body">Some pairs feel fine for the first kilometre — then everything changes once heat, movement, and sweat kick in. This guide compares popular men’s underwear brands in Australia, what they’re actually best for, and which pairs perform when the intensity increases.</p>
     </div>
 </section>
 
-<!-- ===== BRAND COMPARISON ===== -->
 <section class="section">
     <div class="section-wide">
-        <span class="section-tag">Market Analysis</span>
-        <h2 class="section-title">The Top Performance Brands<br>In Australia</h2>
+        <span class="section-tag">2026 Rankings</span>
+        <h2 class="section-title">The Top Performance Brands</h2>
 
         <div class="brand-grid">
             <div class="brand-card featured">
                 <div class="brand-rank">01</div>
                 <div class="brand-info">
-                    <h3>VANTA Sweat Series — Best Overall for Running</h3>
-                    <div class="brand-meta">Best for: Running, training, high-sweat sessions</div>
+                    <h3>VANTA Sweat Series — Best Overall</h3>
+                    <div class="brand-meta">Primary Use: High-Intensity Running & Training</div>
                     <div class="brand-tags">
-                        <span class="pro">Lightweight quick-dry fabric</span>
-                        <span class="pro">Supportive pouch reduces friction</span>
-                        <span class="pro">Holds shape when wet</span>
-                        <span class="con">Slightly more premium price point</span>
+                        <span class="pro">Liquid-motion performance fabric</span>
+                        <span class="pro">Zero-shift anatomical support</span>
+                        <span class="pro">Fastest drying in high humidity</span>
+                        <span class="con">Limited seasonal colors</span>
                     </div>
                 </div>
             </div>
@@ -248,166 +225,106 @@
                 <div class="brand-rank">02</div>
                 <div class="brand-info">
                     <h3>SAXX — Best for Support</h3>
-                    <div class="brand-meta">Best for: Structured support + daily activity</div>
+                    <div class="brand-meta">Primary Use: Daily movement + hiking</div>
                     <div class="brand-tags">
-                        <span class="pro">Strong support system</span>
-                        <span class="pro">Comfortable long wear</span>
-                        <span class="con">Can ride up; less ideal for heavy sweat</span>
+                        <span class="pro">BallPark Pouch™ support</span>
+                        <span class="pro">Excellent long-wear comfort</span>
+                        <span class="con">Occasional leg ride-up in heavy sweat</span>
                     </div>
                 </div>
             </div>
             <div class="brand-card">
                 <div class="brand-rank">03</div>
                 <div class="brand-info">
-                    <h3>Under Armour — Best Budget Performance</h3>
-                    <div class="brand-meta">Best for: Gym + running crossover</div>
+                    <h3>Under Armour — Best Value</h3>
+                    <div class="brand-meta">Primary Use: Gym & casual training</div>
                     <div class="brand-tags">
-                        <span class="pro">Moisture-wicking fabric</span>
-                        <span class="pro">Lightweight feel</span>
-                        <span class="con">Less support; more basic fit</span>
+                        <span class="pro">Reliable moisture wicking</span>
+                        <span class="pro">Durable elastic waistband</span>
+                        <span class="con">Basic support; generic fit</span>
                     </div>
                 </div>
             </div>
             <div class="brand-card">
                 <div class="brand-rank">04</div>
                 <div class="brand-info">
-                    <h3>Step One — Best for Everyday Anti-Chafe</h3>
-                    <div class="brand-meta">Best for: Daily wear + light activity</div>
+                    <h3>Step One — Best for Casual Chafing</h3>
+                    <div class="brand-meta">Primary Use: Daily office + walking</div>
                     <div class="brand-tags">
-                        <span class="pro">Soft bamboo feel</span>
-                        <span class="pro">Anti-chafe panels</span>
-                        <span class="con">Bamboo holds moisture in heavy sweat</span>
-                    </div>
-                </div>
-            </div>
-            <div class="brand-card">
-                <div class="brand-rank">05</div>
-                <div class="brand-info">
-                    <h3>Lululemon — Premium Activewear Option</h3>
-                    <div class="brand-meta">Best for: Gym + lifestyle crossover</div>
-                    <div class="brand-tags">
-                        <span class="pro">Premium feel</span>
-                        <span class="pro">Designed for movement</span>
-                        <span class="con">Expensive; support varies by style</span>
-                    </div>
-                </div>
-            </div>
-            <div class="brand-card">
-                <div class="brand-rank">06</div>
-                <div class="brand-info">
-                    <h3>Bonds Active — Affordable & Accessible</h3>
-                    <div class="brand-meta">Best for: Budget basics</div>
-                    <div class="brand-tags">
-                        <span class="pro">Easy to find</span>
-                        <span class="pro">Affordable starter option</span>
-                        <span class="con">Not strongly performance-focused</span>
+                        <span class="pro">Ultra-soft bamboo feel</span>
+                        <span class="pro">Friction-less glide panels</span>
+                        <span class="con">Bamboo holds moisture under heavy load</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ===== COMPARISON TABLE ===== -->
         <div class="table-wrap">
-            <h3 class="heading-font" style="margin-bottom: 24px; font-size: 20px;">Quick Comparison Table</h3>
+            <h3 class="heading-font" style="margin-bottom: 24px; font-size: 20px;">Technical Comparison Table</h3>
             <table>
                 <thead>
                     <tr>
                         <th>Brand</th>
-                        <th>Best For</th>
-                        <th>Sweat Performance</th>
-                        <th>Support</th>
-                        <th>Main Limitation</th>
+                        <th>Performance Tier</th>
+                        <th>Sweat Management</th>
+                        <th>Stability</th>
+                        <th>Drying Speed</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>VANTA</td><td>Running / High Sweat</td><td class="star-rating">★★★★★</td><td>★★★★</td><td>Premium price</td></tr>
-                    <tr><td>SAXX</td><td>Support & Comfort</td><td class="star-rating">★★★</td><td>★★★★★</td><td>Ride-up</td></tr>
-                    <tr><td>Under Armour</td><td>Budget Performance</td><td class="star-rating">★★★★</td><td>★★★</td><td>Basic fit</td></tr>
-                    <tr><td>Step One</td><td>Everyday Comfort</td><td class="star-rating">★★</td><td>★★★</td><td>Holds moisture</td></tr>
-                    <tr><td>Lululemon</td><td>Gym + Lifestyle</td><td class="star-rating">★★★★</td><td>★★★</td><td>Expensive</td></tr>
-                    <tr><td>Bonds</td><td>Budget Basics</td><td class="star-rating">★★</td><td>★★</td><td>Less technical</td></tr>
+                    <tr><td>VANTA</td><td>Elite</td><td class="star-rating">★★★★★</td><td>★★★★★</td><td>Elite</td></tr>
+                    <tr><td>SAXX</td><td>Premium</td><td class="star-rating">★★★</td><td>★★★★</td><td>Standard</td></tr>
+                    <tr><td>Under Armour</td><td>Standard</td><td class="star-rating">★★★★</td><td>★★★</td><td>Standard</td></tr>
+                    <tr><td>Step One</td><td>Casual</td><td class="star-rating">★★</td><td>★★★</td><td>Moderate</td></tr>
+                    <tr><td>Lululemon</td><td>Premium</td><td class="star-rating">★★★★</td><td>★★★</td><td>Fast</td></tr>
                 </tbody>
             </table>
         </div>
     </div>
 </section>
 
-<section class="section" style="background: var(--gray-50);">
-    <div class="section-inner">
-        <span class="section-tag">Essential Criteria</span>
-        <h2 class="section-title">What Actually Matters for Running</h2>
-        <p class="section-body" style="margin-bottom: 32px;">Cotton and soft lounge fabrics often absorb sweat and become heavier. For running, you need quick-drying materials, moisture-wicking fabrics, and lightweight construction.</p>
-        
-        <h3 class="heading-font" style="font-size: 18px; margin-bottom: 12px;">Fit & Stability</h3>
-        <p class="section-body" style="margin-bottom: 24px;">If your underwear moves or bunches, you’ll notice it quickly. Look for stretch that holds shape and secure leg openings.</p>
-
-        <h3 class="heading-font" style="font-size: 18px; margin-bottom: 12px;">Support</h3>
-        <p class="section-body" style="margin-bottom: 24px;">Support helps reduce friction and excess movement. A well-designed pouch or contour fit can make a noticeable difference.</p>
-    </div>
-</section>
-
 <div class="cta-banner">
     <div class="cta-banner-inner">
-        <h3>Australia's #1 Performance Underwear</h3>
-        <p>Built with quick-dry fabric, anatomical support, and seamless construction.</p>
-        <a href="https://vanta.store/collections/men" class="btn-dark">Shop VANTA Sweat Series</a>
+        <h3>Experience VANTA Performance</h3>
+        <p>Engineered for the high-intensity runner. Built for the heat.</p>
+        <a href="https://vanta.store/collections/men" class="btn-dark">Shop Sweat Series</a>
     </div>
 </div>
 
 <section class="section">
     <div class="section-inner">
-        <span class="section-tag">Final Verdict</span>
-        <h2 class="section-title">The Verdict</h2>
-        <p class="section-body">Most underwear is built for comfort; running demands performance. If you run regularly and deal with sweat or chafing, a performance-focused pair like VANTA makes a noticeable difference.</p>
-    </div>
-</section>
-
-<!-- ===== KEEP READING ===== -->
-<section class="section" style="border-top: 1px solid var(--gray-200);">
-    <div class="section-inner">
-        <h4 class="heading-font" style="margin-bottom: 24px; font-size: 14px; letter-spacing: 0.1em;">Keep Reading</h4>
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-            <a href="best-underwear-running.html" style="font-size: 18px; font-weight: 600; text-decoration: underline;">→ The Best Underwear for Running (What Actually Works)</a>
-            <a href="step-one-vs-vanta.html" style="font-size: 18px; font-weight: 600; text-decoration: underline;">→ Step One vs VANTA: Which Is Better for Running?</a>
+        <span class="section-tag">Further Reading</span>
+        <h2 class="section-title">Keep Researching</h2>
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 40px;">
+            <a href="best-underwear-running.html" class="cursor-pointer" style="font-size: 22px; font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--color-gray-200); padding-bottom: 8px;">→ The Science of Running Underwear</a>
+            <a href="step-one-vs-vanta.html" class="cursor-pointer" style="font-size: 22px; font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--color-gray-200); padding-bottom: 8px;">→ Step One vs VANTA: The Final Verdict</a>
         </div>
     </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section class="section" style="background: var(--gray-50);">
-    <div class="section-inner" style="text-align: center;">
+<section class="section" style="background: var(--color-bg);">
+    <div class="section-inner">
         <span class="section-tag">FAQ</span>
-        <h2 class="section-title">AU Runner Insights</h2>
-    </div>
-    <div class="faq-accordion">
-        <div class="faq-item"><button class="faq-trigger"><span>What is the best men’s underwear for running in Australia?</span><div class="faq-icon"></div></button><div class="faq-content"><div class="faq-answer">The best running underwear should dry quickly, stay in place during movement, and reduce friction during longer sessions.</div></div></div>
-        <div class="faq-item"><button class="faq-trigger"><span>Is bamboo underwear good for running?</span><div class="faq-icon"></div></button><div class="faq-content"><div class="faq-answer">Bamboo can feel soft and breathable, but often retains more moisture than technical performance fabrics during heavy sweat.</div></div></div>
-        <div class="faq-item"><button class="faq-trigger"><span>What is the best underwear for sweating?</span><div class="faq-icon"></div></button><div class="faq-content"><div class="faq-answer">Quick-dry moisture-wicking fabrics are usually best because they move sweat away from skin and dry faster.</div></div></div>
-        <div class="faq-item"><button class="faq-trigger"><span>What underwear does not ride up when running?</span><div class="faq-icon"></div></button><div class="faq-content"><div class="faq-answer">Pairs with a stable fit, supportive structure, and fabric that keeps shape during movement are less likely to ride up.</div></div></div>
-        <div class="faq-item"><button class="faq-trigger"><span>Are briefs or boxer briefs better for running?</span><div class="faq-icon"></div></button><div class="faq-content"><div class="faq-answer">Both can work. Boxer briefs help with thigh chafing, while briefs eliminate leg ride-up entirely.</div></div></div>
+        <h2 class="section-title">Runner Intelligence</h2>
+        <div class="faq-accordion">
+            <div class="faq-item"><button class="faq-trigger"><span>What is the best running underwear in Australia?</span><div class="faq-plus"></div></button><div class="faq-content"><div class="faq-answer">The best running underwear for Australia should dry quickly, stay in place during movement, and reduce friction during longer sessions in heat.</div></div></div>
+            <div class="faq-item"><button class="faq-trigger"><span>Is bamboo or synthetic better for running?</span><div class="faq-plus"></div></button><div class="faq-content"><div class="faq-answer">Synthetic performance blends are generally superior to bamboo for running because they don't absorb sweat and stay lighter on the skin.</div></div></div>
+            <div class="faq-item"><button class="faq-trigger"><span>How do I stop mid-run ride up?</span><div class="faq-plus"></div></button><div class="faq-content"><div class="faq-answer">Look for high-tension leg openings and a structured fit that adapts to your leg geometry during high-output movement.</div></div></div>
+        </div>
     </div>
 </section>
 
 <footer class="site-footer">
-    <div class="footer-inner">
+    <div class="footer-grid">
         <div class="footer-brand">
-            <div class="footer-brand-logo"><img src="https://vanta.store/cdn/shop/files/VANTA_New_Logo.png?v=1707718116&width=600" alt="VANTA"></div>
-            <p class="footer-brand-text">Game-changing comfort for high-output movement. Built for men who sweat.</p>
-            <div class="footer-social-row">
-                <a href="https://www.facebook.com/vantaclo" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-                <a href="https://www.instagram.com/vantavo2/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
-                <a href="https://www.tiktok.com/@sparxunderwear" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78 2.92 2.92 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.57 6.34 6.34 0 0 0 9.37 22a6.34 6.34 0 0 0 6.38-6.2V9.4a8.16 8.16 0 0 0 3.84.96V7.1a4.79 4.79 0 0 1-.01-.41z"/></svg></a>
-                <a href="https://www.youtube.com/@vantaclo" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.4c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/></svg></a>
-            </div>
+            <div class="footer-logo"><img src="https://vanta.store/cdn/shop/files/VANTA_New_Logo.png?v=1707718116&width=600" alt="VANTA"></div>
+            <p style="font-size: 14px; color: var(--color-gray-600); max-width: 280px; margin-bottom: 32px;">Game-changing performance for the high-intensity runner. Built for the sweat.</p>
         </div>
-        <div class="footer-col"><h4>Pages</h4><div class="footer-col-links"><a href="https://vanta.store/pages/about-us">About Us</a><a href="https://vanta.store/pages/contact">Contact Us</a><a href="https://vanta.store/pages/reviews">Reviews</a><a href="https://vanta.store/pages/faqs">FAQ's</a><a href="https://vanta.store/blogs/news">Blogs</a></div></div>
-        <div class="footer-col"><h4>Information</h4><div class="footer-col-links"><a href="https://vanta.store/policies/privacy-policy">Privacy Policy</a><a href="https://vanta.store/policies/refund-policy">Refund Policy</a><a href="https://vanta.store/policies/shipping-policy">Shipping Policy</a><a href="https://vanta.store/policies/terms-of-service">Terms of Service</a></div></div>
-        <div class="footer-col"><h4>Guides</h4><div class="footer-col-links"><a href="best-underwear-running.html">Best Underwear for Running</a><a href="best-underwear-running-australia.html">Best Running Underwear (AU)</a><a href="step-one-vs-vanta.html">Step One vs VANTA</a></div></div>
+        <div class="footer-col"><h4>Shop</h4><div class="footer-links"><a href="#">Men's Collection</a><a href="#">Sweat Series</a></div></div>
+        <div class="footer-col"><h4>Support</h4><div class="footer-links"><a href="https://vanta.store/pages/contact">Contact</a><a href="https://vanta.store/pages/faqs">FAQs</a></div></div>
+        <div class="footer-col"><h4>Guides</h4><div class="footer-links"><a href="best-underwear-running.html">Running Basics</a><a href="best-underwear-running-australia.html">AU Guide</a><a href="step-one-vs-vanta.html">Head-to-Head</a></div></div>
     </div>
-    <div class="footer-bottom-bar">
-        <div>&copy; 2026 VANTA. All rights reserved.</div>
-        <div class="footer-payments"><span>Visa</span><span>Mastercard</span><span>PayPal</span><span>Apple Pay</span><span>Google Pay</span></div>
-    </div>
+    <div class="footer-bottom"><div>&copy; 2026 VANTA. ALL RIGHTS RESERVED.</div></div>
 </footer>
 
 <script>
