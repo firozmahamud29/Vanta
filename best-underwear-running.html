@@ -62,7 +62,6 @@
 
     <style>
         :root {
-            /* Professional Design System Tokens */
             --color-primary: #1C1917;
             --color-secondary: #44403C;
             --color-accent: #000000;
@@ -295,6 +294,9 @@
             letter-spacing: 0.02em;
         }
         .feature-card p { font-size: 16px; color: var(--color-gray-600); line-height: 1.6; }
+        .feature-list { list-style: none; margin-top: 20px; }
+        .feature-list li { font-size: 15px; color: var(--color-gray-600); margin-bottom: 8px; padding-left: 20px; position: relative; }
+        .feature-list li::before { content: "•"; position: absolute; left: 0; color: var(--color-primary); }
 
         /* ===== COMPARISON BATTLE ===== */
         .battle-section { background: var(--color-primary); color: var(--color-white); padding: 120px var(--container-padding); }
@@ -400,7 +402,6 @@
             color: var(--color-gray-400);
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .feature-grid { grid-template-columns: 1fr; }
             .battle-grid { grid-template-columns: 1fr; }
@@ -444,10 +445,10 @@
 <section class="hero">
     <div class="hero-bg"><img src="https://vanta.store/cdn/shop/files/vanta-black-brief-underwear-men.webp?v=1774014191&width=1800" alt="VANTA Evolution" loading="eager"></div>
     <div class="hero-content">
-        <span class="hero-tag">Lab Tested &bull; Field Proven</span>
-        <h1>Your Underwear<br>Is A Piece Of Gear.</h1>
-        <p class="hero-desc">Most men treat underwear as an afterthought. But for runners, it's the most critical interface between body and movement. If it fails, your run fails.</p>
-        <a href="https://vanta.store/collections/men" class="btn-cta">Shop Sweat Series</a>
+        <span class="hero-tag">Performance Engineered</span>
+        <h1>The Best Underwear for Running (What Actually Works)</h1>
+        <p class="hero-desc">If you’ve ever gone for a run and dealt with chafing, sweat build-up, or underwear riding up mid-run — you’re not alone. Most men don’t realise it, but regular underwear usually isn’t designed for running.</p>
+        <a href="#intro" class="btn-cta">Learn What Works</a>
     </div>
 </section>
 
@@ -461,10 +462,10 @@
 <section class="section" id="intro">
     <div class="section-inner">
         <span class="section-tag">The Conflict</span>
-        <h2 class="section-title">Most Underwear Isn’t<br>Built For Running.</h2>
-        <p class="section-body">Regular underwear is designed for lounging and low-impact days. But a 10km run introduces heat, sweat, and repetition that transforms everyday fabric into a liability. Damp fabric becomes heavy, legs ride up, and seams create friction where there shouldn't be any.</p>
+        <h2 class="section-title">Why Most Underwear Fails<br>When You Run</h2>
+        <p class="section-body">Most underwear is built for softness, everyday comfort, and lounging. But running introduces constant movement, sweat, repetition, friction, and heat build-up. That’s when everyday fabric becomes damp and heavy, legs ride up, and seams irritate.</p>
         <p class="section-body" style="font-weight: 600; font-size: 17px; margin-top: 40px; border-left: 3px solid var(--color-primary); padding-left: 20px;">
-            👉 <strong>Seeking the best?</strong> Explore our definitive 2026 AU guide: <a href="best-underwear-running-australia.html" class="cursor-pointer" style="text-decoration: underline;">The Best Men’s Running Underwear in Australia</a>
+            👉 <strong>Looking for top-rated options?</strong> Explore our definitive 2026 AU guide: <a href="best-underwear-running-australia.html" class="cursor-pointer" style="text-decoration: underline;">The Best Men’s Running Underwear in Australia</a>
         </p>
     </div>
 </section>
@@ -472,22 +473,62 @@
 <section class="section" style="background: var(--color-bg);">
     <div class="section-wide">
         <span class="section-tag">Performance Pillars</span>
-        <h2 class="section-title">What Actually Matters<br>When You're Moving</h2>
+        <h2 class="section-title">What Actually Matters<br>For Running Underwear</h2>
         <div class="feature-grid">
             <div class="feature-card">
                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM12 7v5l3 3" stroke="currentColor"/></svg>
-                <h3>1. Moisture Control</h3>
-                <p>Fabric that stays light under sweat is critical. Cotton absorbs and holds. Performance synthetics wick and evaporate, keeping your skin dry and the fabric weightless.</p>
+                <h3>1. Moisture-Wicking Fabric</h3>
+                <p>Fabric choice is one of the biggest differences you’ll notice. Cotton and softer fabrics absorb sweat and hold moisture.</p>
+                <ul class="feature-list">
+                    <li>Prevents heavy damp fabric</li>
+                    <li>Reduces sweat-induced friction</li>
+                    <li>Maintains lightness over distance</li>
+                </ul>
             </div>
             <div class="feature-card">
                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor"/></svg>
-                <h3>2. Locked Fit</h3>
-                <p>If your underwear shifts, friction follows. A modern performance fit uses mapped tension to ensure the waistband and leg openings stay exactly where they belong.</p>
+                <h3>2. A Fit That Stays</h3>
+                <p>If your underwear shifts, you’ll feel it immediately. Look for a fit that stays put through every stride.</p>
+                <ul class="feature-list">
+                    <li>Waistband stability</li>
+                    <li>Eliminates leg ride-up</li>
+                    <li>Stretch that keeps shape</li>
+                </ul>
             </div>
             <div class="feature-card">
                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="currentColor"/></svg>
-                <h3>3. Zero Friction</h3>
-                <p>Most chafing comes from seams. We use flat-locked construction and anatomical support to minimize skin-on-skin contact and eliminate stitch irritation.</p>
+                <h3>3. Support & Seams</h3>
+                <p>Lack of support means more skin-on-skin friction. Flat seams are vital for preventing stitch irritation.</p>
+                <ul class="feature-list">
+                    <li>Anatomical pouch support</li>
+                    <li>Flat-locked seams</li>
+                    <li>Minimal stitch contact</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-inner">
+        <span class="section-tag">Fit Analysis</span>
+        <h2 class="section-title">Brief vs Boxer Brief</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+            <div>
+                <h3 class="heading-font" style="font-size: 20px; margin-bottom: 20px;">Boxer Briefs</h3>
+                <ul class="feature-list">
+                    <li>More thigh coverage</li>
+                    <li>Reduces skin-on-skin rubbing</li>
+                    <li>Popular choice for longer runs</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="heading-font" style="font-size: 20px; margin-bottom: 20px;">Briefs</h3>
+                <ul class="feature-list">
+                    <li>No leg ride-up possible</li>
+                    <li>Lighter, more minimal feel</li>
+                    <li>Maximum freedom of movement</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -522,20 +563,24 @@
         <h2 class="section-title">Common Questions</h2>
         <div class="faq-accordion">
             <div class="faq-item">
-                <button class="faq-trigger"><span>What makes the best running underwear?</span><div class="faq-plus"></div></button>
-                <div class="faq-content"><div class="faq-answer">The best running underwear uses moisture-wicking fabric, stays in place during movement, and helps reduce friction over longer sessions.</div></div>
+                <button class="faq-trigger"><span>What is the best underwear for running?</span><div class="faq-plus"></div></button>
+                <div class="faq-content"><div class="faq-answer">The best running underwear usually uses moisture-wicking fabric, stays in place during movement, and helps reduce friction over longer sessions.</div></div>
             </div>
             <div class="faq-item">
-                <button class="faq-trigger"><span>Why does underwear ride up during runs?</span><div class="faq-plus"></div></button>
+                <button class="faq-trigger"><span>Why does underwear ride up when running?</span><div class="faq-plus"></div></button>
                 <div class="faq-content"><div class="faq-answer">Ride-up is commonly caused by poor fit, short inseams, weak leg openings, or soft fabric losing structure during movement.</div></div>
             </div>
             <div class="faq-item">
-                <button class="faq-trigger"><span>Is bamboo or synthetic better?</span><div class="faq-plus"></div></button>
-                <div class="faq-content"><div class="faq-answer">Quick-dry moisture-wicking synthetic fabrics are usually best because they stay lighter under sweat and dry faster than bamboo or cotton.</div></div>
+                <button class="faq-trigger"><span>What fabric is best for running underwear?</span><div class="faq-plus"></div></button>
+                <div class="faq-content"><div class="faq-answer">Quick-dry moisture-wicking fabrics are often best because they stay lighter under sweat and dry faster than cotton or absorbent fabrics.</div></div>
             </div>
             <div class="faq-item">
-                <button class="faq-trigger"><span>Brief vs Boxer Brief?</span><div class="faq-plus"></div></button>
-                <div class="faq-content"><div class="faq-answer">Both work. Boxer briefs help with thigh rubbing, while briefs remove leg ride-up entirely. It comes down to individual preference.</div></div>
+                <button class="faq-trigger"><span>How do I stop chafing when running?</span><div class="faq-plus"></div></button>
+                <div class="faq-content"><div class="faq-answer">Choose underwear with smooth seams, stable fit, proper support, and fabric that manages sweat effectively.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger"><span>Are briefs or boxer briefs better for running?</span><div class="faq-plus"></div></button>
+                <div class="faq-content"><div class="faq-answer">Both can work. Boxer briefs help with thigh rubbing, while briefs remove leg ride-up entirely. It often comes down to body shape and preference.</div></div>
             </div>
         </div>
     </div>
